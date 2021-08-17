@@ -1,0 +1,13 @@
+package com.cg.project;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class OnlineEyeClinicProj2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(OnlineEyeClinicProj2Application.class, args);
+	}
+
+}

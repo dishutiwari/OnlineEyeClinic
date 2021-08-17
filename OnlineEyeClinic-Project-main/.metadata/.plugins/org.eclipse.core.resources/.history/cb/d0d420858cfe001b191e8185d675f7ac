@@ -1,0 +1,50 @@
+package com.cg;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import javax.transaction.Transactional;
+
+import org.assertj.core.api.Assert;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cg.Exceptions.PatientIdNotFoundException;
+import com.cg.Exceptions.UserNameAlreadyExistException;
+import com.cg.dao.IAdminRepo;
+import com.cg.dao.IAppointmentRepo;
+import com.cg.dao.IPatientRepo;
+import com.cg.model.Admin;
+import com.cg.model.Patient;
+import com.cg.service.AdminServiceImpl;
+import com.cg.service.PatientServiceImpl;
+
+
+@SpringBootTest
+@Transactional
+class OnlineEyeClinicProjApplicationTests {
+
+	
+	@Autowired
+	IAppointmentRepo Repo;
+	@Test
+	public void testId() {
+	int id=2;
+	assertNotNull(Repo.findById(id).get());
+	}
+	@Test
+	public void testGet() {
+	assertNotNull(Repo.findAll());
+	}
+}
+
